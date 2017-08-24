@@ -1,0 +1,80 @@
+<div *ngIf="cart.length <= 0">
+  <h3>&nbsp;</h3>
+</div>
+<div *ngIf="cart.length > 0">
+    <div class="alert alert-dismissible alert-success"><strong>Cards Dealt (Click on card to reset)</strong></div>
+  <ul style="list-style: none;">
+    <!-- Angular structural directives -->
+    <!--<li *ngFor="let card of cart; let i = index" (click)="reDeal()">-->
+    <li (click)="reDeal()">
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Player {{ cart[0].player }}</h4>
+          <p class="list-group-item-text">
+            <img *ngFor="let c of cart | slice:0:7" src="{{ c.imgURL }}" style="height:200px">
+          </p>
+        </a>
+      </div>
+    </li>
+    <li (click)="reDeal()">
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Player {{ cart[7].player }}</h4>
+            <p class="list-group-item-text">
+              <img *ngFor="let c of cart | slice:7:14" src="{{ c.imgURL }}" style="height:200px">
+            </p>
+          </a>
+      </div>
+    </li>
+    <li *ngIf="cart.length > 14" (click)="reDeal()"><!--3 players-->
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Player {{ cart[14].player }}</h4>
+          <p class="list-group-item-text">
+            <img *ngFor="let c of cart | slice:14:21" src="{{ c.imgURL }}" style="height:200px">
+          </p>
+        </a>
+      </div>
+    </li>
+    <li *ngIf="cart.length > 21" (click)="reDeal()"><!--4 players-->
+      <div class="list-group">
+        <a href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">Player {{ cart[21].player }}</h4>
+          <p class="list-group-item-text">
+            <img *ngFor="let c of cart | slice:21:28" src="{{ c.imgURL }}" style="height:200px">
+          </p>
+        </a>
+      </div>
+    </li>
+    <li *ngIf="cart.length > 28" (click)="reDeal()"><!--5 players-->
+      <div class="list-group">
+          <a href="#" class="list-group-item">
+            <h4 class="list-group-item-heading">Player {{ cart[28].player }}</h4>
+            <p class="list-group-item-text">
+              <img *ngFor="let c of cart | slice:28:35" src="{{ c.imgURL }}" style="height:200px">
+            </p>
+          </a>
+      </div>
+          </li>
+    <li *ngIf="cart.length > 35" (click)="reDeal()"><!--6 players-->
+        <div class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">Player {{ cart[35].player }}</h4>
+              <p class="list-group-item-text">
+                <img *ngFor="let c of cart | slice:35:42" src="{{ c.imgURL }}" style="height:200px">
+              </p>
+            </a>
+        </div>
+    </li>
+    <li *ngIf="cart.length > 42" (click)="reDeal()"><!--7 players-->
+        <div class="list-group">
+            <a href="#" class="list-group-item">
+              <h4 class="list-group-item-heading">Player {{ cart[42].player }}</h4>
+              <p class="list-group-item-text">
+                <img *ngFor="let c of cart | slice:42:49" src="{{ c.imgURL }}" style="height:200px">
+              </p>
+          </a>
+        </div>
+    </li>
+  </ul>
+</div>
